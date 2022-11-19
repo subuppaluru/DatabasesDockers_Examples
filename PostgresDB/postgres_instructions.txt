@@ -1,0 +1,33 @@
+
+
+docker build -t postgresdb_subbu -f Dockerfile_Postgres .
+
+docker run --name postgresdb_subbucon -d  postgresdb_subbu
+
+Connect to the MySQL Docker Container
+=====================================
+sudo docker exec -it postgresdb_subbucon bash
+sudo docker exec -it postgresdb_database_1 bash
+
+psql -U postgres -W
+
+Getting help
+============
+help
+
+
+To know about databases, tables and query in mysql
+====================================================
+\d
+
+\dt
+
+select * from Product;
+
+
+Quit and exit
+==============
+
+\q
+
+exit

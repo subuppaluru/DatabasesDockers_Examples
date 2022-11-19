@@ -1,0 +1,8 @@
+FROM postgres
+MAINTAINER subuppaluru@gmail.com
+
+ENV POSTGRES_USER=postgres
+ENV POSTGRES_PASSWORD admin
+ADD product1\q.sql /docker-entrypoint-initdb.d
+
+EXPOSE 5432

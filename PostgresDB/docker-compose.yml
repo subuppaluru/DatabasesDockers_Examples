@@ -1,0 +1,18 @@
+version: '3.0'
+services:
+  database:
+  
+    image: postgres
+    
+    environment:
+    - POSTGRES_USER=postgres
+    - POSTGRES_PASSWORD=postgres
+    
+    #build: 
+    #  context: ./
+    #  dockerfile: Dockerfile_mysql
+      
+    ports:
+      - "2345:5432"    
+    volumes:
+      - ./product2.sql:/docker-entrypoint-initdb.d/product2.sql
