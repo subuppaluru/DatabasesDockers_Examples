@@ -1,0 +1,51 @@
+
+
+Using docker file
+==================
+
+docker build -t mongodbsubbu -f Dockerfile_Mongo .
+
+docker run --name mongodnsubbucon -d -p 27018:27017 mongodbsubbu
+
+sudo docker exec -it mongodnsubbucon bash
+
+using docker compose file
+=========================
+
+docker-compose up -d
+
+docker-compose ps
+
+docker-compose down
+
+
+Interacting with the MongoDB container
+========================================
+
+
+
+mongosh -u admin -p
+
+
+1. Switch the database.
+
+use food
+
+2. Create collection.
+
+db.createCollection("fruits")
+
+3. Insert documents
+
+db.fruits.insertMany([ {name: "apple", origin: "usa", price: 5}, {name: "orange", origin: "italy", price: 3}, {name: "mango", origin: "malaysia", price: 3} ])
+
+4. Search for the documents using the find command
+
+db.fruits.find().pretty()
+
+5. Quit and exit
+
+quit()
+
+exit
+

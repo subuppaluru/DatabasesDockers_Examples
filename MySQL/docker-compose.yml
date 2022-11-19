@@ -1,0 +1,18 @@
+version: '3.0'
+services:
+  database:
+  
+    image: mysql
+    
+    environment:
+    - MYSQL_ROOT_PASSWORD=admin
+    
+    #build: 
+    #  context: ./
+    #  dockerfile: Dockerfile_mysql
+      
+    ports:
+      - "6603:3306"    
+    volumes:
+      - ./product2.sql:/docker-entrypoint-initdb.d/product2.sql
+      

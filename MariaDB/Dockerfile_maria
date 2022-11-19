@@ -1,0 +1,7 @@
+FROM mariadb
+MAINTAINER subuppaluru@gmail.com
+
+ENV MYSQL_ROOT_PASSWORD admin
+ADD employee1.sql /docker-entrypoint-initdb.d
+
+EXPOSE 3306

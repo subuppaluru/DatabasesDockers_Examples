@@ -1,0 +1,39 @@
+
+docker build -t mysqlsubbu -f Dockerfile_mysql .
+
+docker run --name mysqlsubbucon -d  mysqlsubbu
+
+Connect to the MySQL Docker Container
+=====================================
+sudo docker exec -it mysqlsubbucon bash
+
+mysql -u root -p
+
+Getting help
+============
+help
+
+help contents
+
+change the server root password
+===============================
+mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY '[newpassword]';
+
+
+To know about databases, tables and query in mysql
+====================================================
+SHOW DATABASES
+
+USE products;
+
+show tables;
+
+select * from Product;
+
+
+Quit and exit
+==============
+
+\q
+
+exit

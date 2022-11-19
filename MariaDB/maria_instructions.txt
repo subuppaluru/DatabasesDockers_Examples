@@ -1,0 +1,38 @@
+docker build -t mariadb_subbu -f Dockerfile_maria .
+
+docker run --name mariasubbucon -d  mariadb_subbu
+
+Connect to the MySQL Docker Container
+=====================================
+sudo docker exec -it mariasubbucon bash
+
+mysql -u root -p
+
+Getting help
+============
+help
+
+help contents
+
+change the server root password
+===============================
+mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY '[newpassword]';
+
+
+To know about databases, tables and query in mysql
+====================================================
+SHOW DATABASES
+
+USE products;
+
+show tables;
+
+select * from Product;
+
+
+Quit and exit
+==============
+
+\q
+
+exit

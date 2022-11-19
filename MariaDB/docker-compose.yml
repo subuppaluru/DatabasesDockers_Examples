@@ -1,0 +1,17 @@
+version: '3.0'
+services:
+  mariadb:
+    image: mariadb
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+
+    build: 
+      context: ./
+      dockerfile: Dockerfile_maria
+
+    volumes:
+      - ./employees2.sql:/docker-entrypoint-initdb.d/employees2.sql:ro
+      
+    ports:
+      - 3310:3306/tcp   

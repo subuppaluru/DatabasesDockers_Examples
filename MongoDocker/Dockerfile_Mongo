@@ -1,0 +1,9 @@
+FROM mongo
+MAINTAINER subuppaluru@mail.com
+
+ENV MONGO_INITDB_ROOT_USERNAME=admin
+ENV MONGO_INITDB_ROOT_PASSWORD=admin
+
+ADD mongo-init1.js /docker-entrypoint-initdb.d
+
+EXPOSE 27017
